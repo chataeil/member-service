@@ -1,6 +1,5 @@
 package org.koreait.member.entities;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

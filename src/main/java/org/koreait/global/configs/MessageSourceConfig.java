@@ -9,7 +9,7 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 public class MessageSourceConfig {
 
     @Bean
-    public MessageSource messageSource(){
+    public MessageSource messageSource() {
         ResourceBundleMessageSource ms = new ResourceBundleMessageSource();
 
         ms.addBasenames("messages.commons", "messages.validations", "messages.errors");

@@ -1,8 +1,7 @@
-package org.koreait.Member.controllers;
+package org.koreait.member.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.koreait.member.controllers.RequestJoin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +13,6 @@ import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-
 
 @SpringBootTest
 @ActiveProfiles({"default", "test"})
@@ -28,13 +26,13 @@ public class MemberControllerTest {
     private ObjectMapper om;
 
     @Test
-    void joinTest() throws Exception{
+    void joinTest() throws Exception {
         RequestJoin form = new RequestJoin();
         form.setEmail("user01@test.org");
-        form.setName("사용자01");
-//        form.setPassword("_aA123456");
-        form.setConfirmPassword(form.getPassword());
-        form.setRequiredTerms1(true);
+        //form.setName("사용자01");
+       // form.setPassword("_aA123456");
+        //form.setConfirmPassword(form.getPassword());
+        //form.setRequiredTerms1(true);
         form.setRequiredTerms2(true);
         form.setRequiredTerms3(true);
         form.setOptionalTerms(List.of("advertisement"));

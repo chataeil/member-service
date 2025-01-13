@@ -1,6 +1,5 @@
 package org.koreait.global.configs;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.modelmapper.ModelMapper;
@@ -16,7 +15,7 @@ public class BeansConfig {
     @Lazy
     @Bean
     public RestTemplate restTemplate() {
-        return new RestTemplate();
+        return new RestTemplate(); //
     }
 
     @Lazy

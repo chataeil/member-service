@@ -55,6 +55,7 @@ public class Utils {
     public Map<String, List<String>> getErrorMessages(Errors errors) {
         ResourceBundleMessageSource ms = (ResourceBundleMessageSource) messageSource;
 
+
             // 필드별 에러코드 - getFieldErrors()
             // Collectors.toMap
             Map<String, List<String>> messages = errors.getFieldErrors()
@@ -73,5 +74,4 @@ public class Utils {
 
             return messages;
     }
-
 }

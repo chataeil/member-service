@@ -7,13 +7,13 @@ import org.koreait.global.rests.JSONData;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.List;
 import java.util.Map;
 
 @RequiredArgsConstructor
-@RestController("org.koreait")
+@RestControllerAdvice("org.koreait")
 public class CommonControllerAdvice {
 
     private final Utils utils;
@@ -45,6 +45,3 @@ public class CommonControllerAdvice {
         return ResponseEntity.status(status).body(data);
     }
 }
-
-
-

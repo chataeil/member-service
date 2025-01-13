@@ -27,6 +27,7 @@ public class MemberUpdateService {
     private final AuthoritiesRepository authoritiesRepository;
     private final PasswordEncoder passwordEncoder;
     private final ModelMapper modelMapper;
+
     /**
      * 커맨드 객체의 타입에 따라서 RequestJoin이면 회원 가입 처리
      *                      RequestProfile이면 회원정보 수정 처리
@@ -43,7 +44,6 @@ public class MemberUpdateService {
         }
 
         // 비밀번호 해시화 - BCrypt
-
         String hash = passwordEncoder.encode(form.getPassword());
         member.setPassword(hash);
         member.setCredentialChangedAt(LocalDateTime.now());
@@ -55,7 +55,6 @@ public class MemberUpdateService {
 
         save(member, List.of(auth)); // 회원 저장 처리
     }
-
 
 
     /**
@@ -87,36 +86,5 @@ public class MemberUpdateService {
         // 회원 권한 업데이트 처리 E
     }
 
-    /**
-     * 회원 목록 수정 처리
-     *
-     * @param chks
-     */
-//    public void updateList(List<Integer> chks) {
-//        if (chks == null || chks.isEmpty()) {
-//            throw new AlertException("수정할 회원을 선택하세요.");
-//        }
-//
-//        List<Member> members = new ArrayList<>();
-//        for (int chk : chks) {
-//            Long seq = Long.valueOf(utils.getParam("seq_" + chk));
-//            Member member = memberRepository.findById(seq).orElse(null);
-//            if (member == null) continue;
-//
-//            // 비밀번호 변경일시 업데이트
-//            if (utils.getParam("updateCredentialChangedAt_" + chk) != null) {
-//                member.setCredentialChangedAt(LocalDateTime.now());
-//            }
-//
-//            // 탈퇴 취소 또는 탈퇴 처리
-//            String deletedAt = utils.getParam("deletedAt_" + chk);
-//            if (deletedAt != null) {
-//                member.setDeletedAt(deletedAt.equals("CANCEL") ? null : LocalDateTime.now());
-//            }
-//
-//            members.add(member);
-//        }
-//
-//        memberRepository.saveAllAndFlush(members);
-    }
 
+}

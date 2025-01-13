@@ -6,14 +6,14 @@ import lombok.Data;
 import lombok.ToString;
 import org.koreait.global.entities.BaseEntity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity
 @Data
-public class Member extends BaseEntity {
-    @Id
-    @GeneratedValue
+@Entity
+public class Member extends BaseEntity implements Serializable {
+    @Id @GeneratedValue
     private Long seq; // 회원 번호
 
     @Column(length=65, nullable = false, unique = true)
@@ -41,4 +41,4 @@ public class Member extends BaseEntity {
 
     // 비밀번호 변경 일시
     private LocalDateTime credentialChangedAt;
- }
+}

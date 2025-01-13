@@ -1,7 +1,9 @@
 package org.koreait.member;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.koreait.member.entities.Member;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,8 +11,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.time.LocalDateTime;
 import java.util.Collection;
 
+@Getter
+@Setter
 @Builder
-@Data
+@ToString
 public class MemberInfo implements UserDetails {
 
     private String email;

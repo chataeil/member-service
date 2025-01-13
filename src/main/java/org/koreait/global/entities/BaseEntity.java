@@ -21,12 +21,12 @@ public abstract class BaseEntity {
     @JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss")
     private LocalDateTime createdAt;
 
-
     @LastModifiedDate
     @Column(insertable = false)
     @JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss")
     private LocalDateTime modifiedAt;
 
     @JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss")
-    private LocalDateTime deletedAt; // 삭제 표기
+    private LocalDateTime deletedAt;
+
 }

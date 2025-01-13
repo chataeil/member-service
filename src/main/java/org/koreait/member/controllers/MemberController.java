@@ -19,8 +19,8 @@ public class MemberController {
     private final MemberUpdateService updateService;
     private final JoinValidator joinValidator;
 
-    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/join")
+    @ResponseStatus(HttpStatus.CREATED)
     public void join(@RequestBody @Valid RequestJoin form, Errors errors) {
 
         joinValidator.validate(form, errors);
@@ -33,7 +33,7 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public void login(@RequestBody @Valid RequestLogin form, Errors errors){
+    public void login(@RequestBody @Valid RequestLogin form, Errors errors) {
 
     }
 }
