@@ -15,7 +15,7 @@ public class BeansConfig {
     @Lazy
     @Bean
     public RestTemplate restTemplate() {
-        return new RestTemplate(); //
+        return new RestTemplate();
     }
 
     @Lazy
